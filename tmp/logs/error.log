@@ -1,0 +1,1 @@
+2010-09-26 07:26:50 Warning: Warning (2): require_once(C:\xampplite\work\demo\candle\vendors\JSON.php) [<a href='http://php.net/function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in [APP\config\bootstrap.php, line 83]
