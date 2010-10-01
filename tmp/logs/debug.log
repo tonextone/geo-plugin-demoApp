@@ -1,5 +1,0 @@
-2010-09-26 02:31:32 Debug: Notice (8): Undefined variable: javascript in [APP\views\elements\location_picker.ctp, line 18]
-2010-09-26 05:20:21 Debug: Notice (8): Undefined offset: 0 in [APP\views\elements\location_picker.ctp, line 15]
-2010-09-26 06:07:48 Debug: Notice (8): Undefined offset: 0 in [APP\views\elements\location_picker.ctp, line 14]
-2010-09-26 06:23:44 Debug: Notice (8): Undefined offset: 0 in [APP\views\elements\location_picker.ctp, line 14]
-2010-09-26 06:41:57 Debug: Notice (8): Undefined offset: 0 in [APP\views\posts\edit.ctp, line 13]
