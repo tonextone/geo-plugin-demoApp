@@ -62,7 +62,7 @@ $('.locationPickerTrigger').click(function(){
     
     $('.locationPicker').locationPicker(config);
     $('.locationPicker').show();
-    $('.locationPicker').dialog();
+    $('.locationPicker').dialog({width: 600});
 });
 </script>
 
