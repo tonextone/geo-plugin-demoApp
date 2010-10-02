@@ -27,6 +27,13 @@ Configure::write('Security.salt', 'ade5219c20a2cfaf4d5fd2a77632d2ff8845a6ee');
 
 // Session Configuration
 // config('app_session');
+Configure::write('Session.cookie', 'CakeSession');
+Configure::write('Session.save', 'cake');
+// Configure::write('Session.database', 'default');
+// Configure::write('Session.table', 'cake_sessions');
+Configure::write('Session.timeout', 1800);
+Configure::write('Session.start', true);
+Configure::write('Session.checkAgent', true);
 
 /**
  *

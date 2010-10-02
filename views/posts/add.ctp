@@ -13,8 +13,7 @@
 			echo $form->input('body');
 		?>
 		
-		<p>Place</p>
-		
+		<h3>Place0</h3>
 		<div class="place">
 			<?php echo $form->input('Place.0.name'); ?>
 			<?php echo $form->input('Place.0.address'); ?>
@@ -29,6 +28,7 @@
 			)); ?>
 		</div>
 		
+		<h3>Place1</h3>
 		<div class="place locationPicker" id="locationPicker-1">
 			<?php echo $form->input('Place.1.name', array('class' => 'word')); ?>
 			<button class="move" type="button">地図で探す</button>
