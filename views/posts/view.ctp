@@ -40,7 +40,7 @@
 </div>
 
 <?php foreach ($post['Place'] as $place): ?>
-<?php echo $map->draw(
+<?php echo $location->map(
 	'static',
 	array(
 		'center' => "{$place['lat']},{$place['lng']}",

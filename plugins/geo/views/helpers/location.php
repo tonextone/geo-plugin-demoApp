@@ -1,4 +1,4 @@
-%<?php
+<?php
 
 define('MAP_DEFAULT_CENTER', '35.67009827221281,139.7024724232788');
 define('MAP_DEFAULT_ZOOM', 12);
@@ -6,7 +6,7 @@ define('MAP_DEFAULT_WIDTH', 150);
 define('MAP_DEFAULT_HEIGHT', 150);
 define('MAP_DEFAULT_FORMAT', 'png');
 
-class MapHelper extends AppHelper {
+class LocationHelper extends AppHelper {
 	var $helpers = array('Html');
 	var $mapUrl = 'http://maps.google.com/maps';
 	var $mapApiUrl = 'http://maps.google.com/maps/api/staticmap';
@@ -21,17 +21,17 @@ class MapHelper extends AppHelper {
 	   "<latitude>,<longitude>", ...
 	 ]
 	 */
-	function draw($type, $options, $markers = array()) {
+	function map($type, $options, $markers = array()) {
 		switch ($type) {
 			case ('static'):
 			default:
-				return $this->_drawStatic($options, $markers);
+				return $this->_mapStatic($options, $markers);
 		}
 		
 		return '';
 	}
 	
-	function _drawStatic($options, $markers) {
+	function _mapStatic($options, $markers) {
 		
 		$label = $options['label'];
 		
