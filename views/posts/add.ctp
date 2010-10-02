@@ -1,6 +1,6 @@
 <style type="text/css">
 .place {
-    border: #999 1px dashed;
+    border: #999 2px dashed;
 }
 </style>
 

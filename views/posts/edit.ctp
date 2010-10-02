@@ -1,3 +1,9 @@
+<style type="text/css">
+.place {
+    border: #999 2px dashed;
+}
+</style>
+
 <div class="posts form">
 <?php echo $form->create('Post');?>
 	<fieldset>
