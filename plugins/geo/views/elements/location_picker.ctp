@@ -2,8 +2,8 @@
     <link type="text/css" href="/css/ui-smoothness/jquery-ui-1.8.5.custom.css" rel="stylesheet" />
     <style type="text/css">
     .mapCanvas {
-        width: 500px;
-        height: 500px;
+        width: 300px;
+        height: 300px;
     }
     .locationPicker div {
         padding: 0 !important;
@@ -53,26 +53,28 @@
  
 </div>
 <script type="text/javascript">
-$('#locationPickerTrigger-<?php echo $id; ?>').click(function(){
-    var picker = $('#locationPicker-<?php echo $id; ?>');
-    var config = {
-        pick: function(word, address, latitude, longitude) {
-            $('#<?php echo $name; ?>').val(word);
-            $('#<?php echo $address; ?>').val(address);
-            $('#<?php echo $latitude; ?>').val(latitude);
-            $('#<?php echo $longitude; ?>').val(longitude);
-        }
-    };
-    
-    var lat = Number($('#<?php echo $latitude ; ?>').val());
-    var lng = Number($('#<?php echo $longitude ; ?>').val());
-    if ((lat > 0) && (lng > 0)) {
-        config.lat = lat;
-        config.lng = lng;
-    }
-    
-    picker.locationPicker(config);
-    picker.show();
-    picker.dialog({width: 600});
+$(document).ready(function(){
+	$('#locationPickerTrigger-<?php echo $id; ?>').click(function(){
+	    var picker = $('#locationPicker-<?php echo $id; ?>');
+	    var config = {
+	        pick: function(word, address, latitude, longitude) {
+	            $('#<?php echo $name; ?>').val(word);
+	            $('#<?php echo $address; ?>').val(address);
+	            $('#<?php echo $latitude; ?>').val(latitude);
+	            $('#<?php echo $longitude; ?>').val(longitude);
+	        }
+	    };
+	    
+	    var lat = Number($('#<?php echo $latitude ; ?>').val());
+	    var lng = Number($('#<?php echo $longitude ; ?>').val());
+	    if ((lat > 0) && (lng > 0)) {
+	        config.lat = lat;
+	        config.lng = lng;
+	    }
+	    
+	    picker.locationPicker(config);
+	    picker.show();
+	    picker.dialog({width: 600});
+	});
 });
 </script>

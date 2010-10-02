@@ -18,12 +18,17 @@ class LocationHelper extends AppHelper {
 	function picker($options = null) {
 		$view =& ClassRegistry::getObject('view');
 		
-		$element = (!empty($options['element'])) ? $options['element'] : PICKER_DEFAULT_ELEMENT;
+		$opts = array('picker_initialized' => $this->pickerInitialized);
 		
-		$picker = $view->element($element, array_merge(
-			array('plugin' => 'geo', 'picker_initialized' => $this->pickerInitialized),
-			$options
-		));
+		if (!empty($options['element'])) {
+			$element = $options['element'];
+		} else {
+			$opts['plugin'] = 'geo';
+			$element = PICKER_DEFAULT_ELEMENT;
+		}
+		
+		$picker = $view->element($element, array_merge($opts, $options));
+		
 		$this->pickerInitialized = true;
 		
 		return $picker;
