@@ -1,4 +1,4 @@
-<?php
+%<?php
 
 define('MAP_DEFAULT_CENTER', '35.67009827221281,139.7024724232788');
 define('MAP_DEFAULT_ZOOM', 12);
@@ -35,10 +35,10 @@ class MapHelper extends AppHelper {
 		
 		$label = $options['label'];
 		
-		$center = ($options['center']) ? $options['center'] : MAP_DEFAULT_CENTER;
-		$zoom = ($options['zoom']) ? $options['zoom'] : MAP_DEFAULT_ZOOM;
-		$size = ($options['size']) ? $options['size'] : MAP_DEFAULT_WIDTH . 'x' . MAP_DEFAULT_HEIGHT;
-		$format = ($options['format']) ? $options['format'] : MAP_DEFAULT_FORMAT;
+		$center = (!empty($options['center'])) ? $options['center'] : MAP_DEFAULT_CENTER;
+		$zoom = (!empty($options['zoom'])) ? $options['zoom'] : MAP_DEFAULT_ZOOM;
+		$size = (!empty($options['size'])) ? $options['size'] : MAP_DEFAULT_WIDTH . 'x' . MAP_DEFAULT_HEIGHT;
+		$format = (!empty($options['format'])) ? $options['format'] : MAP_DEFAULT_FORMAT;
 		
 		$query = array(
 			'center' => $center,

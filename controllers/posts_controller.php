@@ -2,7 +2,7 @@
 class PostsController extends AppController {
 	
 	var $name = 'Posts';
-	var $helpers = array('Html', 'Form', 'Javascript');
+	var $helpers = array('Html', 'Form', 'Javascript', 'Geo.Map');
 	
 	function index() {
 		$this->Post->recursive = 0;

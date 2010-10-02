@@ -38,6 +38,19 @@
 		<li><?php echo $html->link(__('New Place', true), array('controller' => 'places', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
+
+<?php foreach ($post['Place'] as $place): ?>
+<?php echo $map->draw(
+	'static',
+	array(
+		'center' => "{$place['lat']},{$place['lng']}",
+		'size' => '160x160',
+		'zoom' => 16,
+		'label' => $place['address'],
+	)
+); ?>
+<?php endforeach; ?>
+
 <div class="related">
 	<h3><?php __('Related Places');?></h3>
 	<?php if (!empty($post['Place'])):?>
