@@ -13,10 +13,20 @@ class LocationHelper extends AppHelper {
 	var $mapUrl = 'http://maps.google.com/maps';
 	var $mapApiUrl = 'http://maps.google.com/maps/api/staticmap';
 	
-	function picker($element = null) {
-		$element = (!empty($element)) ? $element : PICKER_DEFAULT_ELEMENT;
+	var $pickerInitialized = false;
+	
+	function picker($options = null) {
 		$view =& ClassRegistry::getObject('view');
-		return $view->element($element);
+		
+		$element = (!empty($options['element'])) ? $options['element'] : PICKER_DEFAULT_ELEMENT;
+		
+		$picker = $view->element($element, array_merge(
+			array('plugin' => 'geo', 'picker_initialized' => $this->pickerInitialized),
+			$options
+		));
+		$this->pickerInitialized = true;
+		
+		return $picker;
 	}
 	
 	/*
