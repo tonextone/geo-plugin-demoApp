@@ -1,5 +1,7 @@
 <?php
 
+define('PICKER_DEFAULT_ELEMENT', 'location_picker');
+
 define('MAP_DEFAULT_CENTER', '35.67009827221281,139.7024724232788');
 define('MAP_DEFAULT_ZOOM', 12);
 define('MAP_DEFAULT_WIDTH', 150);
@@ -10,6 +12,12 @@ class LocationHelper extends AppHelper {
 	var $helpers = array('Html');
 	var $mapUrl = 'http://maps.google.com/maps';
 	var $mapApiUrl = 'http://maps.google.com/maps/api/staticmap';
+	
+	function picker($element = null) {
+		$element = (!empty($element)) ? $element : PICKER_DEFAULT_ELEMENT;
+		$view =& ClassRegistry::getObject('view');
+		return $view->element($element);
+	}
 	
 	/*
 	 options: {

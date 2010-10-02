@@ -14,7 +14,7 @@
 	<?php echo $form->input('Place.0.lat'); ?>
 	<?php echo $form->input('Place.0.lng'); ?>
 	
-	<?php echo $this->element('location_picker'); ?>
+	<?php echo $location->picker(); ?>
 	
 	</fieldset>
 <?php echo $form->end('Submit');?>
